@@ -21,16 +21,16 @@ export class AppComponent {
    * */
 
   ngOnInit() {
-/**    This method is used to remove the zone pollution in angular
+    /**    This method is used to remove the zone pollution in angular
 
-    note 1: The preceding snippet instructs Angular to call setInterval
-    outside the Angular Zone and skip running change detection
+     note 1: The preceding snippet instructs Angular to call setInterval
+     outside the Angular Zone and skip running change detection
 
-    note 2: Third-party libraries commonly trigger unnecessary change
-    detection cycles because they weren't authored with Zone.js in mind.
-    Avoid these extra cycles by calling library APIs outside the Angular zone:
+     note 2: Third-party libraries commonly trigger unnecessary change
+     detection cycles because they weren't authored with Zone.js in mind.
+     Avoid these extra cycles by calling library APIs outside the Angular zone:
 
-    */
+     */
 
     this.ngZone.runOutsideAngular(() => {
       setTimeout(() => {

@@ -1,7 +1,27 @@
-<h4>Zone.js in angular</h4>
+<h2>Zone.js in angular</h2>
 <ol>
   <li>Zone.js is a signaling mechanism that Angular uses to detect
-    when an application state might have changed.</li>
+    when an application state might have changed.
+  </li>
   <li>It captures asynchronous operations like setTimeout, network requests, and event listeners.
-    Angular schedules change detection based on signals from Zone.js.</li>
+    Angular schedules change detection based on signals from Zone.js.
+  </li>
 </ol>
+
+<h3>NoopZone</h3>
+<p>Zone helps Angular know when to trigger change detection and
+  let the developers focus on the application development.
+  By default, Zone is loaded and works without further configuration.
+  You don't necessarily have to use Zone to make Angular work.
+  Instead, you can opt to trigger change detection on your own.</p>
+
+<ol>
+  <li>Remove the zone.js import from polyfills.ts:</li>
+  <li>Bootstrap Angular with the noop zone in src/main.ts:</li>
+</ol>
+
+
+<![CDATA[
+platformBrowserDynamic().bootstrapModule(AppModule, { ngZone: 'noop' })
+.catch(err => console.error(err));
+]]>
