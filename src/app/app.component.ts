@@ -37,7 +37,7 @@ export class AppComponent {
         // update component data
         // but don't trigger change detection.
 
-        console.log("I'mRunning Outside of angular.")
+        console.log("I'm Running this from Outside of angular.")
       });
     });
   }
